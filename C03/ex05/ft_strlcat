@@ -1,0 +1,24 @@
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+{
+    int nbr, i;
+    i = 0;
+
+    nbr = ft_strlen(dest);
+
+    if(size < nbr)
+        return(nbr + size);
+
+    else if(size >= nbr)
+    {
+        while(src[i] != '\0')
+        {
+            dest[nbr] = src[i];
+
+            nbr++;
+            i++;
+        }
+        dest[nbr] = '\0';
+
+        return(nbr);
+    }
+}
